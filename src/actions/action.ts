@@ -12,7 +12,7 @@ export const signUp = async (value: FormData) => {
 		password: value.get("password"),
 	};
 
-	const res = await fetch(`${baseUrl}/auth/register`, {
+	const res = await fetch(`${baseUrl}/api/v1/auth/register`, {
 		method: "POST",
 		body: JSON.stringify(userInfo),
 		headers: {
@@ -29,7 +29,7 @@ export const login = async (value: FormData) => {
 		password: value.get("password"),
 	};
 
-	const res = await fetch(`${baseUrl}/auth/login`, {
+	const res = await fetch(`${baseUrl}/api/v1/auth/login`, {
 		method: "POST",
 		body: JSON.stringify(userInfo),
 		headers: {
@@ -43,7 +43,7 @@ export const login = async (value: FormData) => {
 };
 
 export const getAllTrip = async (): Promise<TResponse<TTripResponse[]>> => {
-	const res = await fetch(`${baseUrl}/trips`, {
+	const res = await fetch(`${baseUrl}/api/v1/trips`, {
 		method: "GET",
 		cache: "no-store",
 	});
@@ -52,7 +52,7 @@ export const getAllTrip = async (): Promise<TResponse<TTripResponse[]>> => {
 	return data;
 };
 export const showCase = async (): Promise<TResponse<TTripResponse[]>> => {
-	const res = await fetch(`${baseUrl}/trips/show-case`, {
+	const res = await fetch(`${baseUrl}/api/v1/trips/show-case`, {
 		method: "GET",
 		cache: "no-store",
 	});
@@ -65,7 +65,7 @@ export const showCase = async (): Promise<TResponse<TTripResponse[]>> => {
 export const getSingleTrip = async (
 	id: string
 ): Promise<TResponse<TTripResponse>> => {
-	const res = await fetch(`${baseUrl}/trips/${id}`, {
+	const res = await fetch(`${baseUrl}/api/v1/trips/${id}`, {
 		method: "GET",
 		cache: "no-store",
 	});
