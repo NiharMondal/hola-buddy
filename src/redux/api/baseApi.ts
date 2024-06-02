@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../store";
-const BASE_URL = "https://assignment-9-back-end.vercel.app/api/v1";
+const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const baseApi = createApi({
 	reducerPath: "baseApi",
