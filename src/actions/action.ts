@@ -11,7 +11,7 @@ export const signUp = async (value: FormData) => {
 	};
 
 	const res = await fetch(
-		`${process.env.NEXT_PUBLIC_BACKEND_URL!}/auth/register`,
+		`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`,
 		{
 			method: "POST",
 			body: JSON.stringify(userInfo),
@@ -31,7 +31,7 @@ export const login = async (value: FormData) => {
 	};
 
 	const res = await fetch(
-		`${process.env.NEXT_PUBLIC_BACKEND_URL!}/auth/login`,
+		`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
 		{
 			method: "POST",
 			body: JSON.stringify(userInfo),
@@ -47,7 +47,7 @@ export const login = async (value: FormData) => {
 };
 
 export const getAllTrip = async (): Promise<TResponse<TTripResponse[]>> => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL!}/trips`, {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/trips`, {
 		method: "GET",
 		cache: "no-store",
 	});
@@ -57,7 +57,7 @@ export const getAllTrip = async (): Promise<TResponse<TTripResponse[]>> => {
 };
 export const showCase = async (): Promise<TResponse<TTripResponse[]>> => {
 	const res = await fetch(
-		`${process.env.NEXT_PUBLIC_BACKEND_URL!}/trips/show-case`,
+		`${process.env.NEXT_PUBLIC_BACKEND_URL}/trips/show-case`,
 		{
 			method: "GET",
 			cache: "no-store",
@@ -73,7 +73,7 @@ export const getSingleTrip = async (
 	id: string
 ): Promise<TResponse<TTripResponse>> => {
 	const res = await fetch(
-		`${process.env.NEXT_PUBLIC_BACKEND_URL!}/trips/${id}`,
+		`${process.env.NEXT_PUBLIC_BACKEND_URL}/trips/${id}`,
 		{
 			method: "GET",
 			cache: "no-store",
