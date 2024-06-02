@@ -1,4 +1,4 @@
-import { LoggedInUser, TResponse, TTrip, TTripResponse } from "@/types/types";
+import { TResponse, TTrip, TTripResponse } from "@/types/types";
 import { baseApi } from "./baseApi";
 
 type TUpdateRequest = {
@@ -71,6 +71,13 @@ const tripApi = baseApi.injectEndpoints({
 			}),
 			invalidatesTags: ["trip"],
 		}),
+
+		showCase: builder.query<TResponse<TTripResponse[]>, void>({
+			query: () => ({
+				url: "/trips/show-case",
+				method: "GET",
+			}),
+		}),
 	}),
 });
 
@@ -81,4 +88,6 @@ export const {
 	useSingleTripQuery,
 	useDeleteTripMutation,
 	useUpdateTripMutation,
+
+	useShowCaseQuery,
 } = tripApi;

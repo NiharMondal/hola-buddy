@@ -28,6 +28,7 @@ export default function TBPagination({
 					onPress={() =>
 						setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev))
 					}
+					isDisabled={currentPage === 1}
 				>
 					Previous
 				</Button>
@@ -40,6 +41,7 @@ export default function TBPagination({
 							prev < totalPages ? prev + 1 : prev
 						)
 					}
+					isDisabled={currentPage === totalPages}
 				>
 					Next
 				</Button>

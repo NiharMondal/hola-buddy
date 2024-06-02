@@ -16,7 +16,7 @@ export default async function TripDetails({
 	const endDate = extractMonth(trip.data.endDate);
 
 	return (
-		<section>
+		<section className="px-5">
 			<div className="h-[300px] md:h-[400px] lg:h-[600px] max-w-5xl mx-auto">
 				<Image
 					src={trip?.data?.photo}

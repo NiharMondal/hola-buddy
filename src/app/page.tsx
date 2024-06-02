@@ -9,10 +9,12 @@ export default function Home() {
 	return (
 		<main className="">
 			<Banner />
-			<TrastedMate />
-			<WhyUs />
-			<FindBuddy />
-			<HowtoBook />
+			<div className="px-5">
+				<TrastedMate />
+				<WhyUs />
+				<FindBuddy />
+				<HowtoBook />
+			</div>
 			<Footer />
 		</main>
 	);
