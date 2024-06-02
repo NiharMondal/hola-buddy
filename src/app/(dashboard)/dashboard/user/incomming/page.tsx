@@ -22,13 +22,11 @@ export default function Incomming() {
 			</h1>
 
 			<div>
-				{trips.length < 1 && <p>No data found!</p>}
-
 				{trips?.length > 0 &&
-					trips.map((trip: any) => (
+					trips?.map((trip: any) => (
 						<Accordion key={trip.id}>
-							<AccordionItem aria-level={trip.id} title={trip?.title}>
-								{trip?.buddyRequest.length > 0 ? (
+							<AccordionItem aria-level={trip?.id} title={trip?.title}>
+								{trip?.buddyRequest?.length > 0 ? (
 									trip.buddyRequest.map((buddy: any) => (
 										<RequestList buddy={buddy} key={buddy?.id} />
 									))
