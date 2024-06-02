@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.home_page {
+		background-image: url("/img/bg.png");
+		object-fit: cover;
+		object-position: center;
+		background-repeat: no-repeat;
+		
+	}
+
+	.custom_style{
+		@apply outline-none ring-2 focus:ring-pink-500 py-2 rounded-md pl-2 text-gray-700
+	}
+}
