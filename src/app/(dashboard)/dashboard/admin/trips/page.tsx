@@ -23,7 +23,7 @@ export default function AdminTripPage() {
 	const [deleteTrip] = useDeleteTripMutation();
 	const handleDelete = async (id: string) => {
 		try {
-			const res = await deleteTrip(id);
+			await deleteTrip(id);
 
 			toast.success("Trip deleted successfully");
 		} catch (error) {

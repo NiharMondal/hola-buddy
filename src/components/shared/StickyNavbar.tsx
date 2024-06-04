@@ -14,18 +14,7 @@ import Link from "next/link";
 import NavbarActionButton from "./NavbarActionButton";
 
 export default function StickyNavbar() {
-	const menuItems = [
-		"Profile",
-		"Dashboard",
-		"Activity",
-		"Analytics",
-		"System",
-		"Deployments",
-		"My Settings",
-		"Team Settings",
-		"Help & Feedback",
-		"Log Out",
-	];
+	const menuItems = ["About Us"];
 
 	return (
 		<Navbar disableAnimation isBordered>
@@ -33,14 +22,14 @@ export default function StickyNavbar() {
 				<NavbarMenuToggle />
 			</NavbarContent>
 
-			<NavbarContent className="sm:hidden pr-3" justify="start">
+			<NavbarContent className="sm:hidden pr-3" justify="center">
 				<NavbarBrand>
 					<Image src="/img/logo.png" width={50} height={50} alt="logo" />
 					<p className="font-bold text-inherit">VoyageVibe</p>
 				</NavbarBrand>
 			</NavbarContent>
 
-			<NavbarContent className="hidden sm:flex gap-4" justify="end">
+			<NavbarContent className="hidden sm:flex gap-4" justify="start">
 				<NavbarBrand>
 					<Link href="/" className="text-sm">
 						<Image
@@ -81,7 +70,7 @@ export default function StickyNavbar() {
 									? "danger"
 									: "foreground"
 							}
-							href="#"
+							href="/about-us"
 						>
 							{item}
 						</Link>

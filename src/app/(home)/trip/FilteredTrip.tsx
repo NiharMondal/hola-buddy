@@ -12,7 +12,7 @@ export default function FilteredTrip({
 	queryParams: Record<string, string>;
 }) {
 	const router = useRouter();
-	const [currentPage, setCurrentPage] = useState<number>(0);
+	const [currentPage, setCurrentPage] = useState<number>(1);
 	const [limit, setLimit] = useState<number>(0);
 	const [search, setSearch] = useState(queryParams.search);
 	const [startDate, setStartDate] = useState("");

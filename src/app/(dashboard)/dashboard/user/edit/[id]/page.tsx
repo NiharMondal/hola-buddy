@@ -14,10 +14,11 @@ export default function EditTrip({ params }: { params: { id: string } }) {
 	const { data, isLoading } = useSingleTripQuery(params.id);
 	const [updateTrip, { isLoading: uploadLoading }] = useUpdateTripMutation();
 	const { register, handleSubmit } = useForm<TTrip>();
-	const photoUrl = data?.data.photo;
+	const photoUrl = data?.data?.photo;
+
 	const handleUpdateTrip: SubmitHandler<TTrip> = async (data) => {
 		data.budget = Number(data.budget);
-		data.photo = photoUrl || photo.secure_url;
+		data.photo = photo.secure_url || photoUrl;
 		try {
 			const response = await updateTrip({
 				id: params.id,
@@ -42,36 +43,43 @@ export default function EditTrip({ params }: { params: { id: string } }) {
 					<Input
 						size="sm"
 						type="text"
+						label="Title"
+						{...register("title")}
+						defaultValue={data?.data?.title}
+					/>
+					<Input
+						size="sm"
+						type="text"
 						label="Destination"
-						{...register("destination", { required: true })}
+						{...register("destination")}
 						defaultValue={data?.data.destination}
 					/>
 					<Input
 						size="sm"
 						type="date"
 						label="Start date"
-						{...register("startDate", { required: true })}
+						{...register("startDate")}
 						defaultValue={data?.data.startDate}
 					/>
 					<Input
 						size="sm"
 						type="date"
 						label="End date"
-						{...register("endDate", { required: true })}
-						defaultValue={data?.data.endDate}
+						{...register("endDate")}
+						defaultValue={data?.data?.endDate}
 					/>
 					<Input
 						size="sm"
 						type="number"
 						label="Budget"
-						{...register("budget", { required: true })}
-						defaultValue={data?.data.budget.toString()}
+						{...register("budget")}
+						defaultValue={data?.data?.budget.toString()}
 					/>
 					<Textarea
 						label="Description"
 						rows={8}
-						{...register("description", { required: true })}
-						defaultValue={data?.data.description}
+						{...register("description")}
+						defaultValue={data?.data?.description}
 					/>
 					<ImageWeidget setResource={setPhoto} /> <br />
 					<Button className="font-semibold" type="submit">

@@ -40,7 +40,7 @@ export default function UserDashboardPage() {
 
 	const handleCreateTrip: SubmitHandler<TTrip> = async (data) => {
 		data.budget = Number(data.budget);
-		data.photo = photo.secure_url;
+		data.photo = photo.secure_url || "";
 		try {
 			const response = await createTrip(data).unwrap();
 			toast.success(response.message);
@@ -111,7 +111,7 @@ export default function UserDashboardPage() {
 								/>
 								<ImageWeidget setResource={setPhoto} /> <br />
 								<Button className="font-semibold" type="submit">
-									{createLoading ? "Submitting..." : "Submit"}
+									{createLoading ? "Creating..." : "Create"}
 								</Button>
 							</form>
 						</div>

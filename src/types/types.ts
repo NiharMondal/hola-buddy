@@ -75,3 +75,10 @@ export type TUserUpdate = {
 		age: string;
 	};
 };
+
+export type TRoleUser = {
+	id: string;
+	name: string;
+	email: string;
+	role: string;
+};

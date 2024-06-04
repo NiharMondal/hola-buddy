@@ -31,9 +31,10 @@ export default function ProfileInfo() {
 
 		try {
 			const res = await updateProfile({
-				userId: user.id,
+				userId: user?.id,
 				payload: value,
 			}).unwrap();
+
 			if (res.statusCode === 200) {
 				toast.success("User profile updated successfully!");
 			}
