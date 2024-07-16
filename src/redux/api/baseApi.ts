@@ -6,6 +6,7 @@ export const baseApi = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: process.env.NEXT_PUBLIC_BACKEND_URL,
 		credentials: "include",
+		
 		prepareHeaders: (headers, { getState }) => {
 			const token = (getState() as RootState).auth.token;
 			if (token) {
